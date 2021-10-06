@@ -1,0 +1,199 @@
+# ******************************
+# Analisis Reto 4
+# Jun 14, 2021
+# ******************************
+# reto_sem_04_carlose_sanchezg.py
+
+Video explicativo en YouTube iMaster:
+Comandante de la Semana Unidad 4 (Reto 3) - 12/06/21
+https://www.youtube.com/watch?v=yOjZl-WJx24
+
+Min 22:00
+
+Documentacion adicional
+https://j2logo.com/python/funciones-lambda-en-python/
+https://www.digitalocean.com/community/tutorials/how-to-use-the-python-filter-function-es
+
+-----
+
+Funciones lambda
+https://www.freecodecamp.org/espanol/news/expresiones-lambda-en-python/#:~:text=Las%20expresiones%20lambda%20en%20Python,con%20la%20palabra%20clave%20def%20.
+
+Funcion zip()
+https://micro.recursospython.com/recursos/la-funcion-zip.html
+
+Funcion reduce()
+https://micro.recursospython.com/recursos/la-funcion-reduce.html
+
+Funcion filter()
+https://docs.hektorprofe.net/python/funcionalidades-avanzadas/funcion-filter/
+
+https://www.youtube.com/watch?v=7VfXZ1tNXmQ
+
+https://www.digitalocean.com/community/tutorials/how-to-use-the-python-filter-function-es
+
+La función filter() integrada de Python puede usarse para crear un nuevo iterador a partir de un iterable existente (como una lista o un diccionario) que filtrará de forma eficiente los elementos usando una función que proporcionamos.
+
+La sintaxis básica para la función filter() es:
+
+filter(function, iterable)
+
+Podemos usar una función como list() para hacer una lista de todos los elementos devueltos en un objeto de filtro.
+
+La función filter() proporciona una forma de filtrar valores que a menudo pueden ser más eficientes que un list comprehension, especialmente cuando comenzamos a trabajar con conjuntos de datos más grandes.
+
+---
+
+Requerimiento:
+Realizar un informe general del servicio prestado según las lecturas generadas durante un periodo.
+
+id_predio: Llave unica
+
+Nombre Tipo Descripción
+toma_lectura, list, Lista que contiene la información de la toma de lectura
+estrato, int, Categorización de los predios (1,2,3,4,5,6)
+estado, str, Estado del predio ('activo','inactivo')
+
+Algoritmo
+
+def inforServicio(lectura : dict, tarifa : dict)-> tuple:
+pass
+
+Funcion_infoServicio(lectura: dict, tarifa: dict) -> tupla:
+
+1. Leer el diccionario de lectura
+
+2. Inicializar variables de lectura
+id_predio
+lec_anterior
+lec_actual
+estrato | (1,2,3,4,5,6)
+estado | ('activo','inactivo')
+
+3. Leer el diccionario de tarifas
+
+4. Inicializar variables de tarifas
+cargo_basico
+consumo
+escala_sub
+
+Inicializamos variables de totales generales
+
+totalGenPredios = 0
+totalSubCargoBasico = 0
+totalSubConsumo = 0
+retornoFuncion = 'Sin lecturas'
+tuplaPredios = ''
+
+5. Hacemos las siguientes tareas para todos los predios entregados
+
+	Si el estado del predio es 'activo'
+
+		Hacemos la liquidacion del predio
+
+		si el estrato es 1, calculamos los valores para este predio
+
+			porcSubsidio = 0,45
+			cargoBasicoPeriodo = cargo_basico * porcSubsidio
+			consumoPeriodo = ((lec_actual - lec_anterior) * consumo) * porcSubsidio
+			totalPredio = cargoBasicoPeriodo + consumoPeriodo
+
+		si el estrato es 2, calculamos los valores para este predio
+
+			porcSubsidio = 0,35
+			cargoBasicoPeriodo = cargo_basico * porcSubsidio
+			consumoPeriodo = ((lec_actual - lec_anterior) * consumo) * porcSubsidio
+			totalPredio = cargoBasicoPeriodo + consumoPeriodo
+
+		si el estrato es 3, calculamos los valores para este predio
+
+			porcSubsidio = 0,10
+			cargoBasicoPeriodo = cargo_basico * porcSubsidio
+			consumoPeriodo = ((lec_actual - lec_anterior) * consumo) * porcSubsidio
+			totalPredio = cargoBasicoPeriodo + consumoPeriodo
+
+		si el estrato es del 4 al 6, calculamos los valores para este predio
+
+			# Estos estratos pagan una contribucion del 40%
+			porcSubsidio = 1,4
+			cargoBasicoPeriodo = cargo_basico * porcSubsidio
+			consumoPeriodo = ((lec_actual - lec_anterior) * consumo) * porcSubsidio
+			totalPredio = cargoBasicoPeriodo + consumoPeriodo
+
+		Se actualizan las variables de los totales generales
+
+		Actualizamos el total a pagar para todos los predios
+		totalGenPredios = totalGenPredios + totalPredio
+
+		si el estrato es del 1 al 3, actualizamos los totales de subsidios
+			totalSubCargoBasico = totalSubCargoBasico + cargoBasicoPeriodo
+			totalSubConsumo = totalSubConsumo + consumoPeriodo
+
+		tuplaPredios = tuple(id_predio, round(totalPredio, 2))
+		listaPredios = listaPredios + tuplaPredios
+		tuplaGeneral = tuplaGeneral + round(totalGenPredios, 2)
+		listaSub = listaSub + list(round(totalSubConsumo, 2), round(totalSubCargoBasico, 2))
+
+
+6. Retornamos el valor de la funcion - retornoFuncion
+
+
+-----
+
+Diccionarios de Ejemplo
+
+Diccionario Lectura
+
+dicEjemLectura = {
+'501001190001' :{
+'toma_lectura': [
+{
+'lec_anterior': 1232,
+'lec_actual': 1304,
+}
+],
+'estrato': 1,
+'estado': 'activo'
+},
+'501002190324' :{
+'toma_lectura': [
+{
+'lec_anterior': 1203,
+'lec_actual': 1230,
+}
+],
+'estrato': 4,
+'estado': 'activo'
+}
+}
+
+Diccionario Tarifa
+
+dicEjemTarifa = {
+	'cargo_basico': 13405.45,
+	'consumo': 1100.80,
+	'escala_sub': 15
+}
+
+*****
+Respuestas
+
+Caso Prueba 1
+
+([('501001190001', 79200.2), ('501002190324', 60377.87)], 139578.07, [7430.4, 6032.45])
+
+Caso Prueba 2
+
+([('201501001', 52781.0), ('201501002', 11575.62), ('201501003', 32429.71), ('201501004', 32966.6), ('201564006', 34178.83)], 163931.76, [31262.72, 18097.36])
+
+([('201501001', 52781.0), ('201501002', 11575.62), ('201501003', 32429.71), ('201501004', 32966.6), ('201564006', 34178.83)], 163931.76, [18053.12, 18097.36])
+
+Caso Prueba 3
+
+([('201501001', 52781.0), ('201501002', 11575.62), ('201501003', 32429.71), ('201501004', 32966.6), ('201564006', 34178.83)], 163931.76,
+[31262.72, 18097.36])
+
+([('201501001', 50304.2), ('201501002', 11575.62), ('201501003', 31879.31), ('201501004', 30489.8), ('201564006', 34178.83)], 158427.76, [23557.12, 18097.36])
+
+-----
+

@@ -1,0 +1,134 @@
+# ******************************
+# Analisis Reto 5
+# Jun 18, 2021
+# ******************************
+# reto_sem_05_carlose_sanchezg.py
+
+# -----
+Buenos dias Estudiantes, lamento haber finalizado la clase pero tuve problemas con mi servicio de internet dejo el link del video https://drive.google.com/file/d/1OAH2RLf9hwzr7VmE7GDQzPC06LdD0exq/view?usp=sharing de la solución de los retos 1,2 y 3; y en el repositorio en la Semana 5 el ejercicio10.py esta el ejemplo para el desarrollo del reto 5. link del repositorio https://github.com/IsraelArbona/Mision-TIC-GRUPO-69
+# -----
+
+Buenas noches apreciados Estudiantes, para darle una recomendación con el reto 5, cuando esta haciendo la lectura del archivo csv tener en cuenta estos parametros pd.read_csv(rt_archivo, encoding='latin-1', engine='python')
+
+
+Mensajes de error:
+Extensión invalida.
+Error al leer el archivo de datos.
+
+-----
+
+Cali, junio 18 2021 – 04:02 pm
+
+Informe entrega Reto 5
+
+¡Hola Profe buenas tardes!,
+
+Quiero informarle que al entregar el reto No. 5 la plataforma me genera el siguiente mensaje de error, calificando mi entrega con una nota de 1.0 a pesar de que el diccionario de mi respuesta es exactamente igual al esperado.
+
+Este es el mensaje de error generado y mi respuesta:
+
+***Error***
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-5nh81ygh because the default path (/home/jobe00/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+
+Las respuestas generadas en mi intento son:
+
+Test:
+print(infoIcfes('https://raw.githubusercontent.com/IsraelArbona/Mision-TIC-GRUPO-09/master/Pruebas_SABER_11_220_estudiantes_2020_1.csv'))
+
+Esperado
+{'Ocupacion Padre': {0: 'Es agricultor. pesquero o jornalero', 1: 'Es dueño de un negocio grande. tiene un cargo de nivel directivo o gerencial', 2: 'Es dueño de un negocio pequeño (tiene pocos empleados o no tiene. por ejemplo tienda. papelería. etc', 3: 'Es operario de máquinas o conduce vehículos (taxita. chofer)', 4: 'Es vendedor o trabaja en atención al público', 5: 'No aplica', 6: 'No sabe', 7: 'Pensionado', 8: 'Tiene un trabajo de tipo auxiliar administrativo (por ejemplo. secretario o asistente)', 9: 'Trabaja como personal de limpieza. mantenimiento. seguridad o construcción', 10: 'Trabaja como profesional (por ejemplo médico. abogado. ingeniero)', 11: 'Trabaja en el hogar. no trabaja o estudia', 12: 'Trabaja por cuenta propia (por ejemplo plomero. electricista)'}, 'Promedio': {0: 68.5, 1: 76.6, 2: 75.5, 3: 65.0, 4: 81.66666666666667, 5: 71.66666666666667, 6: 64.5, 7: 76.71428571428571, 8: 79.0, 9: 77.0, 10: 78.67796610169492, 11: 79.0, 12: 82.0}, 'Mediana': {0: 69.0, 1: 77.0, 2: 75.5, 3: 63.5, 4: 83.0, 5: 73.0, 6: 63.0, 7: 75.0, 8: 79.0, 9: 77.0, 10: 79.0, 11: 79.0, 12: 86.0}, 'Puntación': {0: 4, 1: 15, 2: 10, 3: 6, 4: 3, 5: 3, 6: 4, 7: 7, 8: 1, 9: 1, 10: 59, 11: 2, 12: 5}}
+
+Se obtuvo
+{'Ocupacion Padre': {0: 'Es agricultor. pesquero o jornalero', 1: 'Es dueño de un negocio grande. tiene un cargo de nivel directivo o gerencial', 2: 'Es dueño de un negocio pequeño (tiene pocos empleados o no tiene. por ejemplo tienda. papelería. etc', 3: 'Es operario de máquinas o conduce vehículos (taxita. chofer)', 4: 'Es vendedor o trabaja en atención al público', 5: 'No aplica', 6: 'No sabe', 7: 'Pensionado', 8: 'Tiene un trabajo de tipo auxiliar administrativo (por ejemplo. secretario o asistente)', 9: 'Trabaja como personal de limpieza. mantenimiento. seguridad o construcción', 10: 'Trabaja como profesional (por ejemplo médico. abogado. ingeniero)', 11: 'Trabaja en el hogar. no trabaja o estudia', 12: 'Trabaja por cuenta propia (por ejemplo plomero. electricista)'}, 'Promedio': {0: 68.5, 1: 76.6, 2: 75.5, 3: 65.0, 4: 81.66666666666667, 5: 71.66666666666667, 6: 64.5, 7: 76.71428571428571, 8: 79.0, 9: 77.0, 10: 78.67796610169492, 11: 79.0, 12: 82.0}, 'Mediana': {0: 69.0, 1: 77.0, 2: 75.5, 3: 63.5, 4: 83.0, 5: 73.0, 6: 63.0, 7: 75.0, 8: 79.0, 9: 77.0, 10: 79.0, 11: 79.0, 12: 86.0}, 'Puntación': {0: 4, 1: 15, 2: 10, 3: 6, 4: 3, 5: 3, 6: 4, 7: 7, 8: 1, 9: 1, 10: 59, 11: 2, 12: 5}}
+
+***Error***
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-5nh81ygh because the default path (/home/jobe00/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+
+
+El siguiente es el código completo del reto presentado:
+
+# ******************************
+# Carlos Eduardo Sanchez Guevara
+# Grupo 69
+# Analisis Reto 5
+# Jun 18, 2021
+# ******************************
+# reto_sem_05_carlose_sanchezg.py
+
+# Importamos la libreria pandas
+import pandas as pd
+
+# Importamos la libreria matplotlib
+import matplotlib.pyplot as plt
+
+# Definimos la funcion para lectura del archivo
+def infoIcfes(rt_archivo : str) -> dict:
+
+    # Validamos que la extension del archivo sea csv
+    extArchivo = rt_archivo.split('.')[-1]
+    if extArchivo != 'csv':
+        return 'Extensión inválida.'
+
+    try:
+        # Generamos el DataFrame a partir de la lectura del archivo
+        df = pd.read_csv(rt_archivo, encoding = 'latin-1', engine = 'python')
+    except:
+        # Sino se puede leer el archivo se retorna un mensaje de error
+        return 'Error al leer el archivo de datos.'
+
+    # Identificamos los nombres de las columnas para filtrar los datos
+    # print(df)
+    # for columna in df.columns:
+        # print(columna)
+
+    # Seleccionamos estudiantes con una puntuacion en la prueba de ingles mayor o igual a 60 y menor o igual a 100
+    df_filtrar = df.query('punt_ingles >= 60 and punt_ingles <= 100')
+    # print(df_filtrar)
+
+    # Filtramos los datos por ocupacion del padre
+    df_ocupacion_padre = df_filtrar[['punt_ingles', 'ocupacion_del_padre']]
+    # print(df_ocupacion_padre)
+
+    # Se calculan el promedio, la mediana y el total de la puntuacion
+    d_promedio = df_ocupacion_padre.groupby("ocupacion_del_padre", as_index = False).mean()
+    # print(d_promedio)
+    d_mediana = df_ocupacion_padre.groupby("ocupacion_del_padre", as_index = False).median()
+    # print(d_mediana)
+    d_totales = df_ocupacion_padre.groupby("ocupacion_del_padre", as_index = False).count()
+    # print(d_totales)
+
+    # Se combinan los datos en el dataframe
+    d_datos = pd.merge(d_promedio, d_mediana, on = "ocupacion_del_padre")
+    d_datos = pd.merge(d_datos, d_totales, on = "ocupacion_del_padre")
+    
+    # Se asignan nombres de columnas
+    # La ultima columna lleva el nombre 'Puntación'
+    d_datos.columns = ['Ocupacion Padre', 'Promedio', 'Mediana', 'Puntación']
+
+    # Hacemos la impresion del dataframe
+    # print(d_datos)
+
+    # Se retorna el dataframe convertido en diccionario
+    return d_datos.to_dict()
+
+
+# Se define la ruta del archivo a leer
+# ruta = r'd:\Datos\carlosesg\OneDrive\MISION TIC 2022\01 - CICLO 01\Fundamentos de Programación\Unidad 05\Reto de la Semana\Pruebas_SABER_11_220_estudiantes_2020_1.csv'
+ruta = r'https://raw.githubusercontent.com/IsraelArbona/Mision-TIC-GRUPO-09/master/Pruebas_SABER_11_220_estudiantes_2020_1.csv'
+
+# Llamamos la funcion
+print(infoIcfes(ruta))
+
+# -----
+
+Agradezco su atención quedando muy atento a sus comentarios.
+
+Cordial saludo,
+
+Carlos Eduardo Sanchez Guevara
+Grupo 69
+CC 16.758.409
+*****
+
+2021-06-18 - 11-22-42 Pantalla Entrega Reto Semana 05-1
+
